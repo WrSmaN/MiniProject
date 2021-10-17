@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="MiniProject" transaction-type="RESOURCE_LOCAL">
+		<class>model.Customer</class>
+		<class>model.Employee</class>
+		<class>model.GroupDetails</class>
+		<class>controller.LocalDateAttributeConverter</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://cis175partnnerproject.cahmb9uba3en.us-east-1.rds.amazonaws.com/customers"/>
+			<property name="javax.persistence.jdbc.user" value="adminpartner"/>
+			<property name="javax.persistence.jdbc.password" value="Partnerdatabasepassword12345"/>
+		</properties>
+	</persistence-unit>
+</persistence>
