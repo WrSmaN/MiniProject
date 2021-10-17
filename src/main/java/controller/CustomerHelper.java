@@ -10,7 +10,7 @@ import javax.persistence.TypedQuery;
 import model.Customer;
 
 public class CustomerHelper {
-	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("WebShoppingListwithShoppers");
+	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("MiniProject");
 	
 	public void insertItem(Customer li) {
 		EntityManager em = emfactory.createEntityManager();

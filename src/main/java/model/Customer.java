@@ -1,4 +1,3 @@
-// test
 package model;
 
 import java.time.LocalDate;
@@ -18,6 +17,7 @@ public class Customer {
 	@GeneratedValue
 	private int custGroupID;
 	private int groupSize;
+	private String groupName;
 	private LocalDate visitDate;
 	@ManyToOne (cascade=CascadeType.PERSIST)
 	private Employee employee;
@@ -65,8 +65,13 @@ public class Customer {
 	public void setEmployee(Employee employee) {
 		this.employee = employee;
 	}
+	public String getGroupName() {
+		return groupName;
+	}
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+	}
 
-	
 	@Override
 	public String toString() {
 		return "Customer [custGroupID=" + custGroupID + ", groupSize=" + groupSize + ", visitDate=" + visitDate

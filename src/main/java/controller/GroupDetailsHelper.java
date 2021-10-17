@@ -10,7 +10,7 @@ import javax.persistence.TypedQuery;
 import model.GroupDetails;
 
 public class GroupDetailsHelper {
-	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("WebShoppingListwithShoppers");
+	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("MiniProject");
 
 	public void insertNewListDetails(GroupDetails s) {
 		EntityManager em = emfactory.createEntityManager();
