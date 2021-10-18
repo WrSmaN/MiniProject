@@ -33,8 +33,8 @@ public class CustomerHelper {
 		em.getTransaction().begin();
 		TypedQuery<Customer> typedQuery = em.createQuery("select li from Customer li where li.groupSize = :selectedGroupSize and li.groupName = :selectedGroupName", Customer.class);
 		
-		typedQuery.setParameter("selectedCompany", toDelete.getGroupSize());
-		typedQuery.setParameter("selectedExport", toDelete.getGroupName());
+		typedQuery.setParameter("selectedGroupSize", toDelete.getGroupSize());
+		typedQuery.setParameter("selectedGroupName", toDelete.getGroupName());
 		
 		typedQuery.setMaxResults(1);
 		
