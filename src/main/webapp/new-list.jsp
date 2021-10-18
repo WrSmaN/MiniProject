@@ -18,13 +18,13 @@ List Name: <input type="text" name = "listName"><br />
 Customer Groups:<br />
 <select name = "allItemsToAdd" multiple size = "6">
 <c:forEach items = "${requestScope.allItems}" var="currentitem">
-<option value = "${currentitem.id}"> ${currentitem.groupSize} | ${currentitem.groupName}</option>
+<option value = "${currentitem.custGroupID}"> ${currentitem.groupSize} | ${currentitem.groupName}</option>
 </c:forEach>
 </select>
 <br />
-<input type="submit" value="Create list and Add Items">
+<input type="submit" value="Create group and add customers">
 
 </form>
-<a href="index.html">Go add new items instead</a>
+<a href="Index.html">Create a new customer instead</a>
 </body>
 </html>

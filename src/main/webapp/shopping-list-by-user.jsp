@@ -21,7 +21,7 @@
 </tr>
 
 <tr>
-	<td colspan="3">List Name: ${currentlist.shopper.shopperName}</td>
+	<td colspan="3">List Name: ${currentlist.employee}</td>
 </tr>
 <c:forEach var="listVal" items="${currentlist.listOfItems}">
 <tr><td></td>
@@ -37,7 +37,7 @@ ${listVal.groupName}, ${listVal.groupSize}
 <input type="submit" value="add" name="doThisToList">
 
 </form>
-<a href="addItemsForListServlet">Create a new list</a><br />
-<a href="index.html">Insert a new item</a>
+<a href="addItemsForListServlet">Create a new group</a><br />
+<a href="Index.html">Add a customer</a>
 </body>
 </html>
