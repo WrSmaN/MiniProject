@@ -38,7 +38,7 @@ public class AddGroupServlet extends HttpServlet {
 		li.setGroupName(groupName);
 		dao.insertItem(li);
 		
-		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+		getServletContext().getRequestDispatcher("/Index.html").forward(request, response);
 		
 	}
 

@@ -31,10 +31,10 @@ public class CustomerHelper {
 	public void deleteItem(Customer toDelete) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<Customer> typedQuery = em.createQuery("select li from Customer li where li.groupSize = :selectedGroupSize and li.visitDate = :selectedVisitDate", Customer.class);
+		TypedQuery<Customer> typedQuery = em.createQuery("select li from Customer li where li.groupSize = :selectedGroupSize and li.groupName = :selectedGroupName", Customer.class);
 		
 		typedQuery.setParameter("selectedCompany", toDelete.getGroupSize());
-		typedQuery.setParameter("selectedExport", toDelete.getVisitDate());
+		typedQuery.setParameter("selectedExport", toDelete.getGroupName());
 		
 		typedQuery.setMaxResults(1);
 		
