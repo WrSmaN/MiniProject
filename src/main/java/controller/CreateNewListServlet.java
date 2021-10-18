@@ -36,13 +36,12 @@ public class CreateNewListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		CustomerHelper lih = new CustomerHelper();
-		String listName = request.getParameter("listName");
-		
+		String empName = request.getParameter("empName");
 		String month = request.getParameter("month");
 		String day = request.getParameter("day");
 		String year = request.getParameter("year");
 
-		String employeeName = request.getParameter("shopperName");
+		String listName = request.getParameter("listName");
 
 		LocalDate ld;
 		try {
@@ -61,9 +60,9 @@ public class CreateNewListServlet extends HttpServlet {
 			}
 		}
 		
-		Employee employee = new Employee(employeeName);
+		Employee employee = new Employee(listName);
 		
-		GroupDetails sld = new GroupDetails(listName, ld, employee);
+		GroupDetails sld = new GroupDetails(empName, ld, employee);
 		
 		sld.setListOfItems(selectedItemsInList);
 		

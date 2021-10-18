@@ -9,16 +9,16 @@
 </head>
 <body>
 <form action = "createNewListServlet" method="post">
-List Name: <input type="text" name = "listName"><br />
-Trip Date: <input type="text" name = "month" placeholder="mm" size="4">
+Employee Name: <input type="text" name = "empName"><br />
+Tour Date: <input type="text" name = "month" placeholder="mm" size="4">
 <input type="text" name = "day" placeholder="dd" size="4">
 <input type="text" name = "year" placeholder="yyyy" size="4">
-Shopper Name: <input type="text" name = "shopperName"><br />
+List Name: <input type="text" name = "listName"><br />
 
-Available Items:<br />
+Customer Groups:<br />
 <select name = "allItemsToAdd" multiple size = "6">
 <c:forEach items = "${requestScope.allItems}" var="currentitem">
-<option value = "${currentitem.id}"> ${currentitem.company} | ${currentitem.export}</option>
+<option value = "${currentitem.id}"> ${currentitem.groupSize} | ${currentitem.groupName}</option>
 </c:forEach>
 </select>
 <br />
