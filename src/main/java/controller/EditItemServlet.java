@@ -8,19 +8,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Customer;
-import model.GroupDetails;
 
 /**
- * Servlet implementation class ViewAllItemsServlet
+ * Servlet implementation class EditItemServlet
  */
-@WebServlet("/viewAllItemsServlet")
-public class ViewAllItemsServlet extends HttpServlet {
+@WebServlet("/editItemServlet")
+public class EditItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ViewAllItemsServlet() {
+    public EditItemServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,20 +29,7 @@ public class ViewAllItemsServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		CustomerHelper dao = new CustomerHelper();
-		request.setAttribute("allItems", dao.showAllItems());
-		
-		 //for(Customer li : dao.showAllItems()) {
-		 //System.out.println(li.returnCustomerDetails()); }
-		 
-		
-		String path = "/customer-list.jsp";
-		
-		if(dao.showAllItems().isEmpty()) {
-			path = "/Index.html";
-		}
-	
-		getServletContext().getRequestDispatcher(path).forward(request, response);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -51,7 +37,19 @@ public class ViewAllItemsServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		CustomerHelper dao = new CustomerHelper();
+		
+		String groupName = request.getParameter("groupName");
+		Integer groupSize = Integer.parseInt(request.getParameter("groupSize"));
+		Integer tempId = Integer.parseInt(request.getParameter("custGroupID"));
+		
+		Customer itemToUpdate = dao.searchForItemById(tempId);
+		itemToUpdate.setGroupName(groupName);
+		itemToUpdate.setGroupSize(groupSize);
+		
+		dao.updateItem(itemToUpdate);
+		
+		getServletContext().getRequestDispatcher("/viewAllItemsServlet").forward(request, response);
 	}
 
 }
