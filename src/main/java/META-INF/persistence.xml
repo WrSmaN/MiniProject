@@ -11,7 +11,6 @@
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://cis175partnerproject.cahmb9uba3en.us-east-1.rds.amazonaws.com/customers"/>
 			<property name="javax.persistence.jdbc.user" value="adminpartner"/>
 			<property name="javax.persistence.jdbc.password" value="Partnerdatabasepassword12345"/>
-			<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
 		</properties>
 	</persistence-unit>
 </persistence>

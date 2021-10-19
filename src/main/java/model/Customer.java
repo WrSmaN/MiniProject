@@ -75,7 +75,7 @@ public class Customer {
 	@Override
 	public String toString() {
 		return "Customer [custGroupID=" + custGroupID + ", groupSize=" + groupSize + ", visitDate=" + visitDate
-				+ ", allAccessPass=" + "]";
+				+ "]";
 	}
 	
 	public String returnCustomerDetails() {
