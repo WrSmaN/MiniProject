@@ -9,11 +9,11 @@
 </head>
 <body>
 <form action = "createNewListServlet" method="post">
-Employee Name: <input type="text" name = "empName"><br />
+List Name: <input type="text" name = "empName"><br />
 Tour Date: <input type="text" name = "month" placeholder="mm" size="4">
 <input type="text" name = "day" placeholder="dd" size="4">
 <input type="text" name = "year" placeholder="yyyy" size="4">
-List Name: <input type="text" name = "listName"><br />
+Employee Name: <input type="text" name = "listName"><br />
 
 Customer Groups:<br />
 <select name = "allItemsToAdd" multiple size = "6">
